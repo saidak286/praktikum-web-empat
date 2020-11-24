@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Pilih Mata Uang</td>
+            <td>Masukkan Nilai</td>
+            <td>Nilai Rupiah</td>
+        </tr>
+        <tr>
+            <td>
+                <select class="kurs">
+                    <option value="usd">Dollar US</option>
+			        <option value="eur">Euro</option>
+                    <option value="sgd">Dollar Singapore</option>
+                    <option value="myr">Ringgit Malaysia</option>
+                    <option value="jpy">Yen Jepang</option>
+                    <option value="sar">Riyal Arab Saudi</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" class="input">
+            </td>
+            <td>
+                <p class="result">Rp</p>
+            </td>
+        </tr>
+    </table>
+    <button class="hitung">Hitung</button>
+    <script>
+        const input = document.querySelector(".input");
+		const kurs = document.querySelector(".kurs");
+		const btnHitung = document.querySelector(".hitung");
+		const result = document.querySelector(".result");
+        
+        btnHitung.addEventListener("click", function() {
+			if (kurs.value == "usd") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 9915;
+			}
+
+			else if (kurs.value == "eur") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 15888;
+			}
+
+			else if (kurs.value == "sgd") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 13472;
+			}
+
+            else if (kurs.value == "myr") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 874;
+			}
+
+            else if (kurs.value == "jpy") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 120;
+			}
+
+            else if (kurs.value == "sar") {
+				result.innerHTML = "Rp " + parseInt(input.value) * 3592;
+			}
+		})
+    </script>
+</body>
+</html>
